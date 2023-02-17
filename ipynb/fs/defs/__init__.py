@@ -26,7 +26,7 @@ class FilteredLoader(SourceFileLoader):
     """
     def get_code(self, fullname):
         if self.path.endswith('.ipynb'):
-            with open(self.path) as f:
+            with open(self.path, encoding='utf-8') as f:
                 try:
                     nb = json.load(f)
                 except ValueError:
